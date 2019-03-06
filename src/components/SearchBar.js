@@ -5,17 +5,14 @@ class SearchBar extends Component{
     state ={
         value: ""
     }
-    onInputChange(e){
-        e.preventDefault();
-        this.setState({value: e.target.value})
-    }
+    
     render(){
         return (
             <div className="ui segment">
                 <form className="ui form">
                 <div className="field">
                     <label>Image Search</label>
-                    <input onChange={this.onInputChange} type="text" />
+                    <input onChange={(e)=>this.setState({value: e.target.value})} type="text" />
                 </div>
                 </form>
             </div>
